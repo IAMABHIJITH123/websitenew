@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>പുളിമുട്ടായി</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@300;400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11/dist/framer-motion.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+
+  <!-- Home Screen -->
+  <div id="home" class="screen active">
+    <h1 class="logo">പുളിമുട്ടായി</h1>
+    <button onclick="goToMain()" class="btn-primary">Show More</button>
+  </div>
+
+  <!-- Main Screen -->
+  <div id="main" class="screen">
+    <header>
+      <h2 onclick="goHome()" class="logo-small">പുളിമുട്ടായി</h2>
+      <div class="tabs">
+        <button class="tab active" onclick="showTab('about')">About Us</button>
+        <button class="tab" onclick="showTab('members')">Members</button>
+      </div>
+      <button class="menu-btn" onclick="toggleLogin()">⋯</button>
+    </header>
+
+    <div id="about" class="tab-content active">
+      <div class="content-card" contenteditable="false">
+        നമ്മുടെ ഗ്രൂപ്പാണ് പുളിമുട്ടായി! 🍬<br><br>
+        ചിരിയും സ്നേഹവും കൂടിക്ക 24x7 ഓൺ ആയ ഒരു കൊച്ചു കൂട്ടം.<br>
+        പുളിയും മധുരവും കലർന്ന പോലെ ഞങ്ങളും!
+      </div>
+    </div>
+
+    <div id="members" class="tab-content">
+      <div class="members-grid">
+        <!-- Members will be added here by JS -->
+      </div>
+      <button id="addMemberBtn" class="floating-btn" style="display:none">+</button>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <h3>Admin Login</h3>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <div class="modal-actions">
+        <button onclick="login()">Login</button>
+        <button onclick="toggleLogin()">Cancel</button>
+      </div>
+      <button onclick="logout()" id="logoutBtn" style="display:none;margin-top:10px;background:#e74c3c">Logout</button>
+    </div>
+  </div>
+
+  <!-- Floating Edit Button -->
+  <button id="editBtn" class="floating-btn" style="display:none;right:80px">✏️</button>
+
+  <footer>
+    made by <span class="neon">abhijith</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
